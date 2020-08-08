@@ -1,0 +1,10 @@
+.menu {
+  li {
+    @include breakpoint("phone-320", min) {
+      width: 100%;
+    }
+    @include breakpoint("ipad-pro", min) {
+      width: calc((100% / 4) - 10px);
+    }
+  }
+}
