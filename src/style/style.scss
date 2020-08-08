@@ -2,6 +2,10 @@
 @import "theme/configuration/all.scss";
 @import "theme/components/all.scss";
 
+html{
+  scroll-behavior: smooth;
+}
+
 .swiper-container {
   width: 600px;
   height: 300px;
@@ -14,9 +18,22 @@ header {
   width: 100%;
   z-index: 1;
   background-color: #ffffff;
+  opacity: 0;
+  top: -20%;
+  transition: opacity 0.3s ease-in-out, top 0.3s ease-in-out;
   li {
     display: inline-block;
     margin-right: 1rem;
+  }
+  &.hide{
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out , top 0.3s ease-in-out;
+    top: -20%;
+  }
+  &.show{
+    top: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, top 0.3s ease-in-out;
   }
 }
 
