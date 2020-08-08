@@ -1,3 +1,115 @@
-@import 'theme/library/all.scss';
-@import 'theme/configuration/all.scss';
-@import 'theme/components/all.scss';
+@import "theme/library/all.scss";
+@import "theme/configuration/all.scss";
+@import "theme/components/all.scss";
+
+.swiper-container {
+  width: 600px;
+  height: 300px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #ffffff;
+  li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+}
+
+.menu {
+  p {
+    font-size: 14px;
+    &.ingriedents {
+      font-size: 12px;
+    }
+  }
+}
+
+footer {
+  background-color: $black;
+  a {
+    color: #ffffff;
+  }
+}
+
+.section-intro {
+  @include bgImage(
+    "../assets/images/background/cooking-board.jpg",
+    no-repeat,
+    cover,
+    center
+  );
+  height: 100vh;
+  @include breakpoint("ipad-pro", max) {
+    height: 44vh;
+  }
+  @media screen and (max-width: 767px) {
+    background: none;
+  }
+
+  .frying-pan{
+    position: absolute;
+      left: 11vw;
+      top: 6vh;
+      height: 46vw;
+    @media screen and (max-width: 767px) {
+      display:none;
+    }
+  }
+  @include breakpoint("monitor-large", max) {
+ 
+  }
+  @include breakpoint("monitor-small", max) {
+  }
+  @include breakpoint("desktop-large", max) {
+  }
+  @include breakpoint("desktop-medium", max) {
+  }
+  @include breakpoint("desktop-small", max) {
+  }
+  @include breakpoint("ipad-pro", max) {
+  }
+
+
+}
+
+.content-container {
+  position: absolute;
+  top: 44vh;
+  right: 7vw;
+  max-width: 30vw;
+  text-align: center;
+  @include breakpoint("ipad-pro", max) {
+    top: 20vh;
+    right: 8vw;
+  }
+
+  h1 {
+    font-size: 5vw;
+  }
+
+  p {
+  font-size: 1.2vw;
+    line-height: 1.5vw;
+  }
+
+  @media screen and (max-width: 767px) {
+    position: static;
+    max-width: 100%;
+    padding: 0 28px;
+    h1 {
+      font-size: 52px;
+      margin-top: 200px;
+    }
+  
+    p {
+      font-size: 20px;
+      line-height: 34px;
+  
+    }
+  }
+}

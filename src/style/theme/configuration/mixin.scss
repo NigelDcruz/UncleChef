@@ -1,20 +1,19 @@
 $breakpoints: (
-  "phone-small": 320px,
-  "phone": 420px,
-  "phone-wide": 480px,
-  "phablet": 560px,
-  "tablet-small": 640px,
-  "tablet": 768px,
-  "tablet-wide": 1024px,
-  "desktop": 1248px,
-  "desktop-wide": 1440px,
+  "phone-320": 320px,
+  "phone-420": 420px,
+  "phone-480": 480px,
+  "phonee-560": 560px,
+  "ipad": 768px,
+  "ipad-pro": 1024px,
+  "desktop-small": 1280px,
+  "desktop-medium": 1366px,
+  "desktop-large": 1440px,
+  "monitor-small": 1600px,
+  "monitor-large": 1920px,
 );
-@mixin mq($width, $type: min) {
+@mixin breakpoint($width, $type: min) {
   @if map_has_key($breakpoints, $width) {
     $width: map_get($breakpoints, $width);
-    @if $type == max {
-      $width: $width - 1px;
-    }
     @media screen and (#{$type}-width: $width) {
       @content;
     }
@@ -85,29 +84,23 @@ $breakpoints: (
 
 // Usage
 
-// Example
-// @include mq('tablet-wide') {
-//     padding-top: 4rem;
-//     font-size: 2.4rem;
+// h1 {
+//   @include pseudo(50px, 50px, 50%);
+//   @include positionAbsoluteCenter();
+//   @include button(180px, 30px, #000, 24px);
+//   @include font(24, #fff, 400);
+//   // @include bgImage('../', no-repeat, cover, center)
 // }
 
-h1 {
-  @include pseudo(50px, 50px, 50%);
-  @include positionAbsoluteCenter();
-  @include button(180px, 30px, #000, 24px);
-  @include font(24, #fff, 400);
-  // @include bgImage('../', no-repeat, cover, center)
-}
+// .button {
+//   @include button(180px, 30px, #000, 24px);
+//   text-align: center;
+//   @include font(24, #fff, 400);
+//   // @include bgImage('../', no-repeat, cover, center);
+// }
 
-.button {
-  @include button(180px, 30px, #000, 24px);
-  text-align: center;
-  @include font(24, #fff, 400);
-  // @include bgImage('../', no-repeat, cover, center);
-}
-
-body {
-  @include mq("desktop-wide") {
-    background-color: #000;
-  }
-}
+// body {
+//   @include breakpoint("desktop-wide", min ) {
+//     background-color: #000;
+//   }
+// }
